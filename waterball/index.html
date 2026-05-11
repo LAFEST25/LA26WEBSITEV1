@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link external CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+</head>
+
+<body>
+
+    
+
+    <div class="header">
+
+        <span class="title">LA 2K26</span>
+    </div>
+
+    <div class="side-text left"><span class="aa">A</span> CHRONICLE <br> FORGED.</div>
+
+    <div class="tv-wrapper">
+        <div class="tv-container">
+
+            <!-- TV Frame -->
+            <img src="daftpunkblue_-2.png" class="tv-frame" alt="TV Frame">
+
+            <div class="screen">
+
+                <!-- Video Logo -->
+                <video id="logo" autoplay loop muted playsinline disablePictureInPicture
+                    controlsList="nodownload nofullscreen noremoteplayback noplayback nocontrols">
+                    <source src="asscrack.mp4" type="video/mp4">/* =========================
+
+                </video>
+
+                <!-- Menu -->
+                <div id="menu">
+                    <a href="../eventsv1-main/index.html">EVENTS</a>
+                    <a href="../leg/index.html">LEGACY</a>
+                    <a href="../rules/index.html">RULES</a>
+                    <a href="../contactspage/index.html">CONTACTS</a>
+                    <a id="backBtn" class="back">
+                        >back </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="side-text right"><span class="aa">A</span> GENESIS <br> EXALTED.</div>
+    <div class="phone-text">A CHRONICLE FORGED. <br> A GENESIS EXALTED.</div>
+
+
+    <script>
+        const logo = document.getElementById("logo");
+        const menu = document.getElementById("menu");
+        const backBtn = document.getElementById("backBtn");
+
+        logo.addEventListener("click", () => {
+            logo.style.display = "none";
+            menu.classList.add("show");
+        });
+
+        backBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            menu.classList.remove("show");
+
+            setTimeout(() => {
+                logo.style.display = "block";
+            }, 300);
+        });
+
+        tsParticles.load("particles-js", {
+            particles: {
+                number: {
+                    value: 70,
+                    density: { enable: true, area: 800 }
+                },
+
+                color: { value: "#DCE8FF" },
+
+                links: {
+                    enable: true,
+                    color: "#DCE8FF",
+                    distance: 120,
+                    opacity: 0.3,
+                    width: 1
+                },
+
+                move: {
+                    enable: true,
+                    speed: 0.8,
+                    outModes: { default: "bounce" }
+                },
+
+                size: {
+                    value: 2
+                }
+            },
+
+            interactivity: {
+                events: {
+                    onHover: {
+                        enable: true,
+                        mode: ["grab", "repulse"]  // 🔥 key part
+                    },
+                    onClick: {
+                        enable: true,
+                        mode: "push"
+                    }
+                },
+
+                modes: {
+                    grab: {
+                        distance: 180,
+                        links: {
+                            opacity: 1   // 🔥 lines become strong near cursor
+                        }
+                    },
+
+                    repulse: {
+                        distance: 100,
+                        duration: 1
+                    },
+
+                    push: {
+                        quantity: 4
+                    }
+                }
+            },
+
+            retina_detect: true,
+            background: {
+                color: "transparent"
+            }
+        });
+    </script>
+
+    <div id="particles-js"></div>
+</body>
+
+</html>
