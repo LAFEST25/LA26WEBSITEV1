@@ -482,3 +482,56 @@ body{
     height:100%;
     overflow:hidden;
 }
+
+
+/* ==========================================================================
+   SAFARI DESKTOP FALLBACK OVERRIDES
+   ========================================================================== */
+
+body.safari-fallback .tv-wrapper {
+  display: none !important;
+}
+
+body.safari-fallback .mobile-rules {
+  display: flex !important;
+  flex-direction: column;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 40px; /* Generous padding for desktop screens */
+  z-index: 9999;
+  background: radial-gradient(circle at center, rgba(0, 255, 255, 0.08), rgba(0, 0, 0, 0.97));
+  color: white;
+}
+
+/* Force inner rules items to show cleanly inside the desktop container */
+body.safari-fallback .mobile-rules .rules {
+  display: block !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+body.safari-fallback .mobile-rules .rules-header {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+body.safari-fallback .mobile-rules .rules-box {
+  margin-top: 20px;
+  padding: 30px;
+  border: 1px solid cyan;
+  background: rgba(0, 255, 255, 0.03);
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.15), 
+    inset 0 0 20px rgba(0, 255, 255, 0.05);
+  max-height: 75vh; /* Prevents overflow off the bottom of laptops */
+  overflow-y: auto;
+}
+
+body.safari-fallback .mobile-rules li {
+  margin-bottom: 16px;
+  line-height: 1.6;
+  font-size: 1.1rem; /* Slightly larger text optimization for desktop readability */
+}
