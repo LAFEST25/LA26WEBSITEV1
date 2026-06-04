@@ -11,6 +11,12 @@
     src: url("Panchang-Light.woff2");
 }
 
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    scrollbar-width: none;
+}
+
 .banner {
     width: 100%;
     height: 100vh;
@@ -23,14 +29,16 @@
     position: absolute;
     width: 200px;
     height: 250px;
-    top: 10%;
+    top: 12%;
     left: calc(50% - 100px);
     transform-style: preserve-3d;
-    transform: perspective(1000px);
-    animation: autoRun 20s linear infinite;
+    transform: perspective(1000px) rotateX(-16deg) rotateY(var(--rotation, 0deg));
     z-index: 2;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
+/* 
 @keyframes autoRun {
     from {
         transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
@@ -40,20 +48,62 @@
         transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
     }
 }
+*/
 
-.banner .slider .item {
+/* .banner .slider .item {
     position: absolute;
     inset: 0 0 0 0;
     transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(450px);
+} */
+
+.banner .slider .item {
+    position: absolute;
+    inset: 0;
+
+    transform-style: preserve-3d;
+
+    transform:
+        rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(450px);
 }
-
-
 
 .banner .slider .item img {
     width: 100%;
     /* height: 120%; */
     object-fit: cover;
     aspect-ratio: 3 / 4;
+    object-position: top;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.3s;
+}
+
+.slider-btn:hover {
+    color: white;
+}
+
+#sliderPrevBtn {
+    left: 10%;
+}
+
+#sliderNextBtn {
+    right: 10%;
+}
+
+@media screen and (max-width: 1023px) {
+    .slider-btn {
+        top: 60%;
+    }
 }
 
 .banner .content {
@@ -72,6 +122,7 @@
 }
 
 .banner .content h1 {
+    display:none;
     font-family: "BEASIGNE";
     font-size: 10em;
     line-height: 1em;
@@ -147,6 +198,7 @@
     }
 
     .banner .content h1 {
+        display: block;
         text-align: center;
         width: 100%;
         text-shadow: 0 10px 20px #000;
@@ -154,7 +206,7 @@
     }
 
     .banner .content .author {
-        color: #fff;
+        color: #fff;    
         padding: 20px;
         text-shadow: 0 10px 20px #000;
         z-index: 2;
@@ -294,11 +346,12 @@
 
 .right li {
     font-family: "Panchang";
-    margin-bottom: 18px;
+    margin-bottom: 15px;
     font-size: 1em;
-    border-left: 2px solid cyan;
     padding-left: 8px;
     font-weight: 10;
+    white-space: pre-wrap;
+    line-height: 1.4;
 }
 
 /* arrows */
@@ -312,6 +365,7 @@
     border: none;
     color: cyan;
     cursor: pointer;
+    z-index: 9999999;
 }
 
 #prevBtn {
@@ -382,7 +436,7 @@
 #nextBtn:hover {
     text-shadow: 0 0 10px cyan;
     transform: translateY(-50%) scale(1.2);
-    cursor: none;
+    cursor: pointer;
 }
 
 #closeBtn:hover {
@@ -429,58 +483,9 @@
     box-shadow: 0 10px 20px #0a0a12;
 }
 
-/* hide default cursor */
+/* restore default cursor */
 body {
-    cursor: none;
-}
-
-/* dot */
-.cursor-dot {
-    position: fixed;
-    width: 6px;
-    height: 6px;
-    background: cyan;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    box-shadow:
-        0 0 10px cyan,
-        0 0 20px cyan;
-    transform: translate(-50%, -50%);
-}
-
-/* ring */
-.cursor-ring {
-    position: fixed;
-    width: 30px;
-    height: 30px;
-    border: 2px solid cyan;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9998;
-    transform: translate(-50%, -50%);
-    transition:
-        transform 0.15s ease,
-        width 0.2s ease,
-        height 0.2s ease;
-    box-shadow: 0 0 15px cyan;
-}
-
-/* hover effect */
-.cursor-hover .cursor-ring {
-    width: 50px;
-    height: 50px;
-    border-color: white;
-    box-shadow: 0 0 25px white;
-}
-
-.cursor-hover .cursor-dot {
-    background: white;
-}
-
-.cursor-dot,
-.cursor-ring {
-    mix-blend-mode: difference;
+    cursor: default;
 }
 
 .verycooltext {
@@ -554,7 +559,7 @@ body {
     top: 90%;
     left: 50%;
 
-    transform: translate(-50%, -50%) translateZ(0px);
+    transform: translate(-50%, -50%) rotateX(16deg);
 
     width: 180px;
     height: 80px;
@@ -562,15 +567,22 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
-
+    pointer-events: none;
 
     border-radius: 12px;
 
-
-
     z-index: 5;
 }
+
+/* @keyframes autoRunReverse {
+    from {
+        transform: translate(-50%, -50%) rotateY(0deg) rotateX(16deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotateY(-360deg) rotateX(16deg);
+    }
+} */
 
 .center-banner span {
     font-family: "BEASIGNE";
@@ -691,14 +703,16 @@ body {
 /* from 810px to 760px */
 @media (max-width: 810px) and (min-width: 760px) {
     .banner .content h1::before {
-        left: 0;
+        /* left: 0; */
+        display: none;
     }
 }
 
 /* from 590px*/
 @media (max-width: 590px) {
     .banner .content h1::before {
-        left: 0;
+        /* left: 0; */
+        display: none;
     }
 }
 
@@ -817,4 +831,493 @@ body {
                 transparent);
         background-size: 100px 100px;
     }
+}
+
+
+
+
+/* safksdglsjdgns */
+.card {
+    position: relative;
+    width: 200px;
+    height: 280px;
+
+    transform-style: preserve-3d;
+}
+
+/* ================= FRONT ================= */
+.face.front {
+    position: absolute;
+    inset: 0;
+    transform: translateZ(15px);
+}
+
+.face.front img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* border-radius: 14px; */
+}
+
+/* ================= BACK ================= */
+.face.back {
+    position: absolute;
+    inset: 0;
+    transform: rotateY(180deg) translateZ(15px);
+}
+
+.face.back img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* border-radius: 14px; */
+    filter: brightness(0.6);
+}
+
+/* ================= LEFT (20px thickness) ================= */
+.face.leftc {
+    position: absolute;
+    width: 30px;
+    height: 280px;
+    top: 0;
+    left: 0;
+
+    /* background: linear-gradient(to left, #111, #222); */
+    background: rgba(0, 0, 0, 0.146);
+    backdrop-filter: blur(40px);
+    transform:
+        rotateY(-90deg)
+        translateZ(15px);
+}
+
+/* ================= RIGHT (20px thickness) ================= */
+.face.rightc {
+    position: absolute;
+    width: 30px;
+    height: 280px;
+    top: 0;
+    right: 0;
+
+    background: linear-gradient(to right, #111, #333);
+
+    transform:
+        rotateY(90deg)
+        translateZ(15px);
+}
+
+.face img {
+    display: block;
+}
+
+
+.face.leftc img,
+.face.rightc img,
+.face.top img,
+.face.bottom img {
+    width: 100%;
+    height: 100% !important;
+
+    object-fit: fill;
+
+    opacity: 0.75;
+    filter: brightness(0.6) blur(5px);
+
+    display: block;
+}
+
+
+/* ================= TOP ================= */
+.face.top {
+    position: absolute;
+    width: 200px;
+    height: 30px;
+    top: 0;
+
+    background: linear-gradient(to top, #0f0f0f, #2a2a2a);
+
+    transform:
+        rotateX(90deg)
+        translateZ(15px);
+}
+
+/* ================= BOTTOM ================= */
+.face.bottom {
+    position: absolute;
+    width: 200px;
+    height: 30px;
+    bottom: 0;
+
+    background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
+
+    transform:
+        rotateX(-90deg)
+        translateZ(15px);
+}
+
+.face.front img {
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.5),
+        0 5px 15px rgba(0,0,0,0.3);
+}
+
+.face {
+    backface-visibility: hidden;
+
+    box-shadow:
+        0 0 2px rgba(0,0,0,0.7),
+        inset 0 0 2px rgba(0,0,0,0.5);
+
+    outline: 0.5px solid rgba(0,0,0,0.25);
+}
+
+
+
+
+/* ===================================================== */
+/* ================== LARGE TABLETS ==================== */
+/* ===================================================== */
+
+@media screen and (max-width: 1023px) {
+
+    .banner .slider {
+        width: 160px;
+        height: 200px;
+
+        left: calc(50% - 80px);
+    }
+
+    .banner .slider .item {
+        transform:
+            rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(320px);
+    }
+
+    .card {
+        width: 160px;
+        height: 220px;
+    }
+
+    /* FRONT + BACK */
+    .face.front,
+    .face.back {
+        transform: translateZ(10px);
+    }
+
+    .face.back {
+        transform: rotateY(180deg) translateZ(10px);
+    }
+
+    /* LEFT + RIGHT */
+    .face.leftc,
+    .face.rightc {
+        width: 20px;
+        height: 220px;
+    }
+
+    .face.leftc {
+        transform: rotateY(-90deg) translateZ(10px);
+    }
+
+    .face.rightc {
+        transform: rotateY(90deg) translateZ(10px);
+    }
+
+    /* TOP + BOTTOM */
+    .face.top,
+    .face.bottom {
+        width: 160px;
+        height: 20px;
+    }
+
+    .face.top {
+        transform: rotateX(90deg) translateZ(10px);
+    }
+
+    .face.bottom {
+        transform: rotateX(-90deg) translateZ(10px);
+    }
+
+    .banner .content h1 {
+        font-size: 7em;
+    }
+}
+
+
+/* ===================================================== */
+/* ===================== MOBILE ======================== */
+/* ===================================================== */
+
+@media screen and (max-width: 767px) {
+
+    .banner {
+        overflow: visible;
+    }
+
+    .banner .slider {
+        width: 140px;
+        height: 200px;
+
+        top: 16%;
+
+        left: calc(50% - 55px);
+    }
+
+    .banner .slider .item {
+        transform:
+            rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(230px);
+    }
+
+    .card {
+        width: 140px;
+        height: 200px;
+    }
+
+    /* FRONT + BACK */
+    .face.front {
+        transform: translateZ(8px);
+    }
+
+    .face.back {
+        transform: rotateY(180deg) translateZ(8px);
+    }
+
+    /* LEFT + RIGHT */
+    .face.leftc,
+    .face.rightc {
+        width: 16px;
+        height: 200px;
+    }
+
+    .face.leftc {
+        transform: rotateY(-90deg) translateZ(8px);
+    }
+
+    .face.rightc {
+        transform: rotateY(90deg) translateZ(8px);
+    }
+
+    /* TOP + BOTTOM */
+    .face.top,
+    .face.bottom {
+        width: 110px;
+        height: 16px;
+    }
+
+    .face.top {
+        transform: rotateX(90deg) translateZ(8px);
+    }
+
+    .face.bottom {
+        transform: rotateX(-90deg) translateZ(8px);
+    }
+
+    .banner .content {
+        bottom: 100px;
+    }
+
+    .banner .content h1 {
+        font-size: 4.5em;
+    }
+
+    .banner .content .author {
+        font-size: 12px;
+        padding: 0 20px;
+    }
+
+    .center-banner {
+        top: 72%;
+        width: 300px;
+        height: 200px;
+    }
+
+    .center-banner img {
+        max-width: 240px;
+    }
+}
+
+
+/* ===================================================== */
+/* ================= SMALL PHONES ====================== */
+/* ===================================================== */
+
+@media screen and (max-width: 480px) {
+
+    .banner .slider {
+        width: 90px;
+        height: 130px;
+
+        top: 18%;
+
+        left: calc(50% - 45px);
+    }
+
+    .banner .slider .item {
+        transform:
+            rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(150px);
+    }
+
+    .card {
+        width: 90px;
+        height: 130px;
+    }
+
+    /* FRONT + BACK */
+    .face.front {
+        transform: translateZ(6px);
+    }
+
+    .face.back {
+        transform: rotateY(180deg) translateZ(6px);
+    }
+
+    /* LEFT + RIGHT */
+    .face.leftc,
+    .face.rightc {
+        width: 12px;
+        height: 130px;
+    }
+
+    .face.leftc {
+        transform: rotateY(-90deg) translateZ(6px);
+    }
+
+    .face.rightc {
+        transform: rotateY(90deg) translateZ(6px);
+    }
+
+    /* TOP + BOTTOM */
+    .face.top,
+    .face.bottom {
+        width: 90px;
+        height: 12px;
+    }
+
+    .face.top {
+        transform: rotateX(90deg) translateZ(6px);
+    }
+
+    .face.bottom {
+        transform: rotateX(-90deg) translateZ(6px);
+    }
+
+    .banner .content h1 {
+        font-size: 3.5em;
+    }
+
+    .center-banner {
+        width: 240px;
+        height: 160px;
+    }
+
+    .center-banner img {
+        max-width: 180px;
+    }
+}
+
+
+
+.modal-body {
+    filter: blur(0px);
+}
+
+    .modal-body::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: url("../waterball/bg2.png")
+              center/cover;
+
+  filter: blur(12px);
+
+
+  z-index: -1;
+}
+
+
+
+.left{
+    filter: blur(0px);
+}
+
+.left::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  /* background: url("images/img2.jpeg" ); */
+  background-size: cover; 
+  filter: blur(12px);
+  z-index: -1;
+}
+
+.background-glow {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle,
+      rgba(0, 170, 255, 0.4) 0%,
+      rgba(0, 170, 255, 0.2) 20%,
+      rgba(0, 100, 255, 0.1) 40%,
+      transparent 70%);
+  filter: blur(80px);
+  opacity: 0.6;
+}
+
+    
+/*  */
+#modalRules .sub-bullet-level-1 {
+    display: list-item !important;
+    list-style-type: none !important;
+    margin-left: 25px !important;     /* Pushes item right */
+    padding-left: 15px !important;    /* Creates room for the custom dot */
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+    position: relative !important;
+    
+    /* Strips any background colors or blue vertical borders from parent layout */
+    border-left: none !important;
+    background: none !important;
+}
+
+/* Injecting a clean bullet point dot directly via CSS */
+#modalRules .sub-bullet-level-1::before {
+    content: "•" !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    font-weight: bold !important;
+}
+
+/* --- 3. Tier 2 Sub-Bullets (e.g., - Song selection) --- */
+#modalRules .sub-bullet-level-2 {
+    display: list-item !important;
+    list-style-type: none !important;
+    margin-left: 55px !important;     /* Double push to the right for clear nesting */
+    padding-left: 15px !important;    /* Creates room for the custom dash */
+    margin-top: 0.4rem !important;
+    margin-bottom: 0.4rem !important;
+    position: relative !important;
+    font-size: 0.95rem !important;
+    opacity: 0.85;                     /* Makes nested items look more like secondary details */
+
+    /* Strips any background colors or blue vertical borders from parent layout */
+    border-left: none !important;
+    background: none !important;
+}
+
+/* Injecting a clean dash marker directly via CSS */
+#modalRules .sub-bullet-level-2::before {
+    content: "–" !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
 }
