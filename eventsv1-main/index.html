@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LA EVENTS</title>
+    <title>EVENTS</title>
     <link rel="stylesheet" href="../nav.css">
+    <script src="../nav-scroll.js" type="module"></script>
     <style>
         * {
             margin: 0;
@@ -14,62 +15,253 @@
         }
 
         body {
-            background-image: url("images/bg.png");
             background-color: black;
             background-size: contain;
         }
 
-        .navbar-container {
-            z-index: 4;
-        }
     </style>
     <link rel="stylesheet" href="style2.css" />
+
+
 </head>
 
 <body>
     <div class="glitch-overlay"></div>
+    <div class="background-glow"></div>
 
-    <div class="navbar-container">
-        <button class="menu-toggle" aria-label="Toggle menu">
-            <div></div>
-            <div></div>
-            <div></div>
-        </button>
-        <nav class="navbar">
-            <a href="../index.html">HOME</a>
-            <a href="../eventsv1-main/index.html">EVENTS</a>
-            <a href="../rules/index.html">RULES</a>
-            <a href="../leg/index.html">LEGACY</a>
-            <a href="../contacts_updated.html">CONTACTS</a>
-        </nav>
+<div class="nav-wrapper">
+
+  <div class="nav-container" id="navContainer">
+    <input type="checkbox" id="navToggleCheckbox" class="nav-toggle-checkbox" aria-hidden="true" />
+    <label for="navToggleCheckbox" class="custom-toggler mobile-hamburger" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <div class="nav-mobile" aria-hidden="true">
+      <a href="../index.html">HOME</a>
+      <a href="../rules/index.html">RULES</a>
+      <a href="../leg/index.html">LEGACY</a>
+      <a href="../contacts-main/index.html">CONTACTS</a>
+      <a href="../eventsv1-main/index.html">EVENTS</a>
     </div>
+
+    <!-- Left links -->
+    <div class="nav-left">
+      <a href="../index.html">HOME</a>
+      <a href="../rules/index.html">RULES</a>
+    </div>
+
+    <!-- Center image -->
+    <div class="nav-center">
+      <img src="../visorwlogoinit.png" alt="logo" id="navToggle">
+    </div>
+
+    <!-- Right links -->
+    <div class="nav-right">
+      <a href="../leg/index.html">LEGACY</a>
+      <a href="../contacts-main/index.html">CONTACTS</a>
+    </div>
+
+  </div>
+
+</div>
 
 
     <div class="header"></div>
-    <span class="title">LA 2K26</span>
     <div class="banner">
+        <button id="sliderPrevBtn" class="slider-btn">&#10094;</button>
+        <button id="sliderNextBtn" class="slider-btn">&#10095;</button>
         <div class="slider" style="--quantity: 7">
             <!-- <div class="item" style="--position: 1"><img src="images/dragon_1.jpg" alt=""></div> -->
             <div class="item" style="--position: 1">
-                <img src="images/img1.png" alt="" />
+            <div class="card">
+
+                <div class="face front">
+                <img src="images/HarmonyV1Vertical.jpg.jpeg" />
+                </div>
+
+                <div class="face back">
+                <img src="images/HarmonyV1Vertical.jpg.jpeg" />
+                </div>
+
+                <div class="face leftc">
+                    <img src="images/HarmonyV1Vertical.jpg.jpeg">
+                </div>
+                <div class="face rightc">
+                    <img src="images/HarmonyV1Vertical.jpg.jpeg">
+                </div>
+
+                <div class="face top">
+                    <img src="images/HarmonyV1Vertical.jpg.jpeg">
+                </div>
+                <div class="face bottom">
+                    <img src="images/HarmonyV1Vertical.jpg.jpeg">
+                </div>
+
+            </div>
             </div>
             <div class="item" style="--position: 2">
-                <img src="images/img2.jpeg" alt="" />
+                <div class="card">
+
+                <div class="face front">
+                <img src="images/EnquestaVertical.jpg.jpeg" />
+                </div>
+
+                <div class="face back">
+                <img src="images/EnquestaVertical.jpg.jpeg" />
+                </div>
+
+                <div class="face leftc">
+                    <img src="images/EnquestaVertical.jpg.jpeg">
+                </div>
+                <div class="face rightc">
+                    <img src="images/EnquestaVertical.jpg.jpeg">
+                </div>
+
+                <div class="face top">
+                    <img src="images/EnquestaVertical.jpg.jpeg">
+                </div>
+                <div class="face bottom">
+                    <img src="images/EnquestaVertical.jpg.jpeg">
+                </div>
+
+                </div>
             </div>
             <div class="item" style="--position: 3">
-                <img src="images/img3.jpeg" alt="" />
+                <div class="card">
+
+                <div class="face front">
+                <img src="images/BNTV_V0.2.jpg.jpeg" />
+                </div>
+
+                <div class="face back">
+                <img src="images/BNTV_V0.2.jpg.jpeg" />
+                </div>
+
+                <div class="face leftc">
+                    <img src="images/BNTV_V0.2.jpg.jpeg">
+                </div>
+                <div class="face rightc">
+                    <img src="images/BNTV_V0.2.jpg.jpeg">
+                </div>
+
+                <div class="face top">
+                    <img src="images/BNTV_V0.2.jpg.jpeg">
+                </div>
+                <div class="face bottom">
+                    <img src="images/BNTV_V0.2.jpg.jpeg">
+                </div>
+
+                </div>
             </div>
             <div class="item" style="--position: 4">
-                <img src="images/img4.jpeg" alt="" />
+                <div class="card">
+
+                <div class="face front">
+                <img src="images/LAP VERTICAL.png" />
+                </div>
+
+                <div class="face back">
+                <img src="images/LAP VERTICAL.png" />
+                </div>
+
+                <div class="face leftc">
+                    <img src="images/LAP VERTICAL.png">
+                </div>
+                <div class="face rightc">
+                    <img src="images/LAP VERTICAL.png">
+                </div>
+
+                <div class="face top">
+                    <img src="images/LAP VERTICAL.png">
+                </div>
+                <div class="face bottom">
+                    <img src="images/LAP VERTICAL.png">
+                </div>
+
+                </div>
             </div>
             <div class="item" style="--position: 5">
-                <img src="images/img5.jpeg" alt="" />
+                <div class="card">
+
+                <div class="face front">
+                <img src="images/L'EBATE VERT.png" />
+                </div>
+
+                <div class="face back">
+                <img src="images/L'EBATE VERT.png" />
+                </div>
+
+                <div class="face leftc">
+                    <img src="images/L'EBATE VERT.png">
+                </div>
+                <div class="face rightc">
+                    <img src="images/L'EBATE VERT.png">
+                </div>
+
+                <div class="face top">
+                    <img src="images/L'EBATE VERT.png">
+                </div>
+                <div class="face bottom">
+                    <img src="images/L'EBATE VERT.png">
+                </div>
+
+                </div>
             </div>
             <div class="item" style="--position: 6">
-                <img src="images/img6.jpeg" alt="" />
+                <div class="card">
+
+                <div class="face front">
+                <img src="images/DOM Vertical.jpg.jpeg" />
+                </div>
+
+                <div class="face back">
+                <img src="images/DOM Vertical.jpg.jpeg" />
+                </div>
+
+                <div class="face leftc">
+                    <img src="images/DOM Vertical.jpg.jpeg">
+                </div>
+                <div class="face rightc">
+                    <img src="images/DOM Vertical.jpg.jpeg">
+                </div>
+
+                <div class="face top">
+                    <img src="images/DOM Vertical.jpg.jpeg">
+                </div>
+                <div class="face bottom">
+                    <img src="images/DOM Vertical.jpg.jpeg">
+                </div>
+
+                </div>
             </div>
             <div class="item" style="--position: 7">
-                <img src="images/img7.jpeg" alt="" />
+                 <div class="card">
+
+                <div class="face front">
+                <img src="images/L'UMINATE VERTICAL.jpg.jpeg" />
+                </div>
+
+                <div class="face back">
+                <img src="images/L'UMINATE VERTICAL.jpg.jpeg" />
+                </div>
+
+                <div class="face leftc">
+                    <img src="images/L'UMINATE VERTICAL.jpg.jpeg">
+                </div>
+                <div class="face rightc">
+                    <img src="images/L'UMINATE VERTICAL.jpg.jpeg">
+                </div>
+
+                <div class="face top">
+                    <img src="images/L'UMINATE VERTICAL.jpg.jpeg">
+                </div>
+                <div class="face bottom">
+                    <img src="images/L'UMINATE VERTICAL.jpg.jpeg">
+                </div>
+
+                </div>
             </div>
             <div class="center-banner">
                 <div class="banner-inner">
@@ -120,9 +312,6 @@
             </div>
         </div>
     </div>
-    <div class="cursor-dot"></div>
-    <div class="cursor-ring"></div>
-
     <!-- <script>
         const images = document.querySelectorAll(".item img");
 
@@ -170,308 +359,361 @@
         };
     </script> -->
 
-    <script>
-        const images = document.querySelectorAll(".item img");
+   <script>
+    const images = document.querySelectorAll(".item");
+    const items = document.querySelectorAll(".item");
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modalImg");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDesc = document.getElementById("modalDesc");
+    const modalRules = document.getElementById("modalRules");
 
-        const modal = document.getElementById("modal");
-        const modalImg = document.getElementById("modalImg");
-        const modalTitle = document.getElementById("modalTitle");
-        const modalDesc = document.getElementById("modalDesc");
-        const modalRules = document.getElementById("modalRules");
+    const modalBody = document.querySelector(".modal-body");
+    const seeRulesBtn = document.getElementById("seeRulesBtn");
+    const backToDescBtn = document.getElementById("backToDescBtn");
 
-        const modalBody = document.querySelector(".modal-body");
-        const seeRulesBtn = document.getElementById("seeRulesBtn");
-        const backToDescBtn = document.getElementById("backToDescBtn");
+    seeRulesBtn.onclick = () => modalBody.classList.add("show-rules");
+    backToDescBtn.onclick = () => modalBody.classList.remove("show-rules");
 
-        seeRulesBtn.onclick = () => modalBody.classList.add("show-rules");
-        backToDescBtn.onclick = () => modalBody.classList.remove("show-rules");
+    const closeBtn = document.getElementById("closeBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const prevBtn = document.getElementById("prevBtn");
 
-        const closeBtn = document.getElementById("closeBtn");
-        const nextBtn = document.getElementById("nextBtn");
-        const prevBtn = document.getElementById("prevBtn");
+    let currentIndex = 0;
 
-        let currentIndex = 0;
+    // 🔥 DATA
+    const eventData = [
+        {
+            title: "HARMONY",
+            desc: `Silence becomes obsolete the second the first note hits. Upon a singular stage, an amalgam of different voices rises as one; the air shifts as the ensembles take command through their mastery of rhythm, harmony, and precision. What follows is not just any other performance, but a resurgence of spirit and voices restored to their complete grandeur. This is Harmony—a celebration of music in its most powerful and unapologetic form.`,
+            rules: [
+                "1. Team Composition",
+                "   • Each school is eligible to nominate only one team.",
+                "   • Teams must consist of 5 – 10 members.",
+                "   • Each team must include:",
+                "       - Minimum 3 instrumentalists",
+                "       - Maximum 4 vocalists",
+                
+                "2. Theme-Based Performance",
+                "   • Every team must conceptualise and present its act around a single, defined theme (e.g., friendship, hope, nostalgia, unity, freedom, nature, etc.).",
+                "   • The theme should be reflected through:",
+                "       - Song selection",
+                "       - Musical arrangement and presentation",
+                "       - Stage presence",
+                "       - Costumes and overall visual representation",
 
-        // 🔥 DATA
-        const eventData = [
-            {
-                title: "HARMONY",
-                desc: `Silence becomes obsolete the second the first note hits. Upon a singular stage, an amalgam of different voices rises as one; the air shifts as the ensembles take command through their mastery of rhythm, harmony, and precision. What follows is not just any other performance, but a resurgence of spirit and voices restored to their complete grandeur. This is Harmony — a celebration of music in its most powerful and unapologetic form.`,
+                "3. Performance Duration",
+                "   • Performance duration: 7 minutes",
+                "   • Stage setup allowance: 3 minutes",
+                "   • Exceeding the time limit may result in a deduction of marks.",
+                
+                "4. Song Selection",
+                "   • Teams may perform film songs, independent contemporary music, original compositions, or songs by other artists, provided all selections are suitable for a school audience. ",
+                "   • The following are prohibited:",
+                "       - Vulgar, offensive, or profane content",
+                "       - Purely classical or devotional performances",
+                "   • Multiple languages and varied musical styles (melody, fusion, upbeat, etc.) are encouraged.",
+                "   • The lyrics of the selected songs must be submitted in PDF format at least 3 days prior to the event.",
 
-                rules: [
-                    "Each team must have a minimum of five members, and a maximum of ten.",
-                    "Teams will have three minutes for stage setup and seven minutes for performance.",
-                    "Each team must include at least three instruments and not more than four vocalists.",
-                    "All genres of music are permitted, except devotional, patriotic, and classical.",
-                    "Instruments must be tuned before reaching the school.",
-                    "The use of pre-recorded MIDI files, rhythm boxes, karaoke tracks, or drum pads is strictly prohibited.",
-                    "Shoulder synthesisers and USB-MIDI controllers are allowed, as long as they do not include pre-recorded MIDI loops.",
-                    "The venue will provide the following:A standard drum kit Two keyboard stands Five microphones Six output connections",
-                    "Participants must bring any additional instruments and accessories they may need, such as guitar pedals, cables and drumsticks.",
-                    "Amplifiers will be available upon request.",
-                    "Vulgarity in lyrics will lead to deduction of points.",
-                ],
-            },
 
-            {
-                title: "DANCE O' MANIA",
-                desc: `Dance O’ Mania surges to life, each rhythmic step reverberating and building a quiet yet undeniable force. Movement becomes a synergy — fluid and unrestrained, breaking past limits to form something raw and deliberate. As the momentum builds to its summit, every motion carries emotion — precise, controlled yet instinctive. In that balance of solitude and strength, the stage does not just hold the performance, it yields to it.`,
+                "5. Musical Arrangement",
+                "   • The following equipment will be provided at the venue:",
+                "       - 1 drum kit",
+                "       - 2 keyboard stands",
+                "       - 5 microphones",
+                "       - 6 output connections",
+                "       - 2 amplifiers",
+                "   • Teams must bring all additional instruments, cables, pedals, drumsticks, and accessories required for their performance. ",
+                "   • All instruments must be tuned before arrival and played live.",
+                "   • MIDI-enabled instruments, including iPads, will be subject to inspection. Teams intending to use such equipment must inform the organisers in advance and specify their technical requirements.",
+                "   • Shoulder synthesisers and USB-MIDI controllers are allowed, provided they do not contain pre-recorded MIDI loops.",
+                "   • Any damage to instruments or equipment will be the sole responsibility of the participating team.",
+                
 
-                rules: [
-                    "1. Each team must have a minimum of five members, and a maximum of ten.",
-                    "2. Teams will have three minutes for stage setup and seven minutes for performance.",
-                    "3. Each team must include at least three instruments and not more than four vocalists.",
-                    "4. All genres of music are permitted, except devotional, patriotic, and classical.",
-                    "5. Instruments must be tuned before reaching the school.",
-                    "6. The use of pre-recorded MIDI files, rhythm boxes, karaoke tracks, or drum pads is strictly prohibited.",
-                    "7. Shoulder synthesisers and USB-MIDI controllers are allowed, as long as they do not include pre-recorded MIDI loops.",
-                    "8. The venue will provide the following:",
-                    "   • A standard drum kit",
-                    "   • Two keyboard stands",
-                    "   • Five microphones",
-                    "   • Six output connections",
-                    "9. Participants must bring any additional instruments and accessories they may need, such as guitar pedals, cables and drumsticks.",
-                    "10. Amplifiers will be available upon request.",
-                    "11. Vulgarity in lyrics will lead to deduction of points.",
-                ],
-            },
+                
+                "6. External music instructors will be escorted to and from the auditorium by their respective ushers and must exit immediately after their team's performance."
+            ]
+        },
+        {
+            title: "ENQUESTA",
+            desc: `Imagine a world where intellect is no longer an advantage, but a necessity. Where inquisitiveness is the need of the hour, and questions do not merely test what you know, but probe how you think. Welcome to Enquesta, where insight meets acuity. Read between the lines and scrutinise every word with intent, for only then will you truly stand a chance of securing victory.`,
+            rules: [
+                "1. Each school may register up to four teams for the preliminary round.",
+                "2. Each team must consist of only two members.",
+                "3. The preliminary round will comprise 20 questions, spanning a diverse range of topics.",
+                "4. Only one team per school can qualify for the finals.",
+                "5. In case of a tie, starred questions will be used as tie-breakers.",
+                "6. The top six teams from the preliminary round will advance to a 4-round finals.",
+                "7. The quizmasters’ decision shall be final and binding."
+            ]
+        },
+        {
+            title: "BLOCK N' TANGLES",
+            desc: `Think fast, speak faster, and pray your neurons cooperate. Block N’ Tangles is not so much a game as it is a live demonstration of what happens when intelligence is politely abandoned. The rules may be simple, but the outcomes, well, not so much. One twist, one rephrase, one unfortunate sentence, and the whole performance spirals beautifully off the cliff of absurdity. Every plot twist is a trap, every response is a gamble, and every round is an elegant collapse of preparation into pandemonium.`,
+            rules: [
+                "1. Each school can send no more than two teams, each consisting of two members.",
+                "2. There will be two off-stage rounds:", 
+                "    • A written round that will shortlist teams for the second round.", 
+                "    • A group discussion round that will test the participants’ improvisation skills.", 
+                "3. Four teams will qualify for the final round, which will be conducted on stage.",
+                "4. The on-stage round will be further divided into 3 sub-rounds, the details of which will be revealed on the day of the event.",
+                "5. The judges’ decision shall be final and binding.",
+                "6. Vulgarity, conspiratorial references, and obscenity will not be entertained and will lead to disqualification."
+            ]
+        },
+        {
+            title: "LA PERSONA",
+            desc: `The lights are glaring and the audience awaits; unflinching and unforgiving. The only script you have is the one you create under the limelight. Quick-thinking, composure, and authenticity are your only allies. Be your own character, or put on a mask as your temperament is intensely analysed. This is La Persona, a battleground where only the fearless move ahead in a test of personality and creativity. The throne lies vacant for the victor to claim. Conquer the stage or crumble under the weight of the crown.`,
+            rules: [
+                "1. Delegation",
+                "Each school may nominate a maximum of four contestants to participate in this event.",
+                "2. The Competition",
+                "The event comprises four rounds:",
+                "   • Two Preliminary Rounds",
+                "   • Two Onstage Rounds",
+                "   • Special Rounds: The contest continues its tradition with familiar challenges alongside new, unpredictable segments.",
+                "3. Code of Conduct",
+                "Attire: All participants are expected to appear in modest attire.",
+                "Language: Use of vulgar or unparliamentary language is strictly prohibited and will result in penalisation.",
+                "4. The Verdict",
+                "The judges' decision is final and absolute. La Persona will crown only one definitive winner."
+            ]
+        },
+        {
+            title: "L'EBATE",
+            desc: `A clash of sharp minds, where every word is weighed and every argument unravelled. A ground where opinions and facts are challenged, refined, reframed, and even rebuilt in the face of opposition. As a contender at L’ebate, your strength lies in what you can defend. `,
+            rules: [
+                "1. Each school may send a team comprising two members.",
+                "2. Performance in the preliminary round will determine qualification for the semi-finals and the finals.",
+                "3. Preliminary Round Rules: ",
+                "   • Teams will be paired for a head-to-head debate. ",
+                "   • Each side will have 120 seconds to present its stance, split equally between the two speakers who must transition at the halfway mark.",
+                "   • This is followed by a 90-second cross-examination during which the opposing team must direct questions to both speakers.",
+                "4. Participants will not be allowed to change their stance during the debate.",
+                "5. During the rebuttal session:",
+                "    • Speakers are not permitted to seek the help of their teammates.",
+                "    • Cross-questioning will not be allowed.",
+                "    • ⁠No new arguments may be introduced.",
+                "6. Details regarding the semi-finals and the finals will be provided on the day of the event."
+            ]
+        },
+        {
+            title: "DANCE O' MANIA",
+            desc: `Dance O’ Mania surges to life, each rhythmic step reverberating and building a quiet yet undeniable force. Movement becomes a synergy—fluid and unrestrained, breaking past limits to form something raw and deliberate. As the momentum builds to its summit, every motion carries emotion—precise, controlled yet instinctive. In that balance of solitude and strength, the stage does not just hold the performance, it yields to it.`,
+            rules: [
+                "1. Team Composition",
+                "Each school may send only one team consisting of 8 to 16 participants. The maximum performance time is 8 minutes.",
+                "2. Music Submission",
+                "Teams may choose any soundtrack. The final audio track must be submitted to the event heads at least 2 days prior to the event.",
+                "3. Prohibited Materials",
+                "The use of party poppers, explosive items, powdery substances, water, fire, or any hazardous materials on stage is strictly prohibited.",
+                "4. Music Backup",
+                "Participants must bring their soundtrack on a USB drive and submit it to the event heads on the day of the fest.",
+                "5. Content Guidelines",
+                "Obscenity or vulgarity in lyrics or performance will lead to immediate disqualification.",
+                "6. Stage Usage",
+                "All performance sequences must take place entirely within the stage area.",
+                "7. Theme Clarity",
+                "If a team presents a specific theme, it must be clearly conveyed to both the judges and the audience.",
+                "8. Props",
+                "• Teams are encouraged to use small, manageable props, which must be handled and carried by the performers themselves.",
+                "• Props must adhere to the dimensions of the backstage entrance. The maximum size for any single prop is 6 ft (180 cm) in height and 4 ft (120 cm) in width. Oversized or unsafe items will not be permitted on stage.",
+                "• While ushers may assist, teams are solely responsible for managing their props and equipment, including stage placement. The organising committee will not be held responsible for any loss or damage incurred.",
+                "9. Stage Clearance",
+                "All props must be removed immediately after the performance.",
+                "10. Rule Compliance",
+                "Failure to comply with Rules 2, 3, and 4 will result in the deduction of points.",
+                "11. Costume Safety",
+                "Costumes must be safe, appropriate, and suitable for stage performances.",
+                "12. Time Limit Enforcement",
+                "Exceeding the 8-minute limit will lead to point deductions for every additional 30 seconds.",
+                "13. Venue Responsibility",
+                "Any damage to stage equipment or venue property will be the responsibility of the participating team.",
+                "14. Technical Check",
+                "Teams may be provided with a brief sound-check opportunity prior to the event.",
+                "15. Choreographer Exit Policy",
+                "• Only designated faculty members may remain on campus following the performance.",
+                "• Choreographers will be escorted to and from the auditorium by their respective ushers and must exit immediately after their team's performance.",
+                "• Adherence to these protocols is essential for maintaining good standing throughout the competition.",
+                "16. Conduct and Discipline",
+                "Any form of misconduct, including arguments with judges, questioning their credibility, or showing disrespect toward ushers or organisers of Dance O’ Mania, will result in heavy penalties.",
+                "17. Judges’ decisions are final and binding."  
 
-            {
-                title: "BLOCK N' TANGLES",
-                desc: `"Think fast, speak faster, and pray your neurons cooperate. Block N’ Tangles is not so much a game as it is a live demonstration of what happens when intelligence is politely abandoned. The rules may be simple, but the outcomes, well, not so much. One twist, one rephrase, one unfortunate sentence, and the whole performance spirals beautifully off the cliff of absurdity. Every plot twist is a trap, every response is a gamble, and every round is an elegant collapse of preparation into pandemonium.`,
+            ]
+        },
+        {
+            title: "L'UMINATE",
+            desc: `A world at its pinnacle, where progress collapses under its own weight. Here, today’s realities warp into distorted futures, shaped by power, silence, and control. Through the clever use of satire and humour, actors reveal the absurdities embedded within systems to which we often conform without question. Theatre becomes a lens, magnifying the truths that seem distant yet disturbingly close. At this tipping point, the spotlight exposes not just what we could become, but what we already are.`,
+            rules: [
+                "1. Each school may send only one team comprising 5 to 7 members.",
+                "2. Performances must be strictly within 10 to 15 minutes. Exceeding the time limit may lead to penalties.",
+                "3. All performances must be based on original scripts written by the participants. Plagiarism is not permitted.",
+                "4. The performance must clearly reflect a dystopian or exaggerated societal setting and include a blend of drama and satire.",
+                "5. All performances must be appropriate for a school audience. Offensive, explicit, or insensitive content will result in disqualification.",
+                "6. Basic props are allowed; however, heavy set-ups or time-consuming stage arrangements are not permitted. Teams must manage within quick transitions.",
+                "7. Costumes and makeup must align with the theme and tone of the performance, maintaining neatness, safety, and stage-appropriateness.",
+                "8. Teams are required to incorporate a thematic clause, which will be provided one week prior to the event. The execution of this clause will be taken into consideration by the judges.",
+                "9. The judges’ decisions shall be final and binding."
+            ]
+        }
+    ];
 
-                rules: [
-                    "Each school can send no more than two teams, each consisting of two members.",
-                    "There will be two off-stage rounds:", 
-                    "    • A written round that will shortlist teams for the second round. ",
-                    "    • A group discussion round that will test the participants’ improvisation skills. ",
-                    "Four teams will qualify for the final round, which will be conducted on stage.",
-                    "The on-stage round will be further divided into 3 sub-rounds, the details of which will be revealed on the day of the event.",
-                    "The judges’ decision shall be final and binding.",
-                    "Vulgarity, conspiratorial references, and obscenity will not be entertained and will lead to disqualification."
-                ],
-            },
-
-            {
-                title: "LA PERSONA",
-                desc: `The lights are glaring and the audience awaits; unflinching and unforgiving. The only script you have is the one you create under the limelight. Quick thinking, composure and authenticity are your only allies. Be your own character, or put on a mask as your temperament is intensely analysed. This is La Persona, a battleground where only the fearless move ahead in a test of personality and creativity. The throne lies vacant for the victor to claim. Conquer the stage or crumble under the weight of the crown.`,
-
-                rules: [
-                    "1. Each school may nominate a maximum of four contestants to participate in this event.",
-                    "2. The event comprises three rounds:",
-                    "    • Glance - Written round",
-                    "    • Gaze - Interview round",
-                    "    • The Unveil - Final onstage round",
-                    "3. All participants are expected to show up in modest attire.",
-                    "4. Strict adherence to time limits for each segment is mandatory. Any deviation may result in penalties, including point deductions.",
-                    "5. Any form of vulgarity, obscenity, or the use of unparliamentary language is strictly prohibited. Such infractions will result in immediate point deductions or potential disqualification.",
-                    "6. The judges' decision will be final and irrevocable.",
-                    "7. La Persona will crown only one winner."
-                ],
-            },
-
-            {
-                title: "L'EBATE",
-                desc: `A clash of sharp minds where every word is weighed and every argument unravelled. A ground where opinions and facts are challenged, refined, reframed, and even rebuilt in the face of opposition. As a contender at L’ebate, your strength lies in what you can defend. `,
-
-                rules: [
-                    "1. Each school may send a team comprising two members.",
-                    "2. Performance in the prelims will determine entry into the semi-finals and finals.",
-                    "3. Prelims rules: Speakers will be allowed one minute to deliver their points, after which the opposition can ask questions for a maximum of two minutes. A maximum of three questions is allowed.",
-                    "4. Finals rules: The finals will be centred around a moot court scenario. Participants will not be allowed to change their stand during the debate.",
-                    "5. During the rebuttal session, the speaker is not allowed to seek the help of his teammate, and cross-questioning is not allowed. No new arguments may be introduced in the rebuttal period.",
-                    "6. Details regarding the semi-finals and finals will be provided on the day of the event."
-                ],
-            },
-
-            {
-                title: "ENQUESTA",
-                desc: `Imagine a world where intellect is no longer an advantage, but a necessity. Where inquisitiveness is the need of the hour, and questions do not merely test what you know, but probe how you think. Welcome to Enquesta, where insight meets acuity. Read between the lines and scrutinise every word with intent, for only then will you truly stand a chance of securing victory. `,
-
-                rules: [
-                    "Each school may register up to four teams for the preliminary round.",
-                    "Each team must consist of only two members.",
-                    "The preliminary round will comprise 20 questions, spanning a diverse range of topics.",
-                    "Only one team per school can qualify for the finals.",
-                    "In case of a tie, starred questions will be used as tie-breakers.",
-                    "The top six teams from the preliminary round will advance to a 5-round finals with progressive eliminations until two teams remain for the final round.",
-                    "The quizmasters’ decision shall be final and binding."
-                ],
-            },
-
-            {
-                title: "ILLUMINATI",
-                desc: `A world at its pinnacle, where progress collapses under its own weight. Here, today’s realities warp into distorted futures, shaped by power, silence, and control. Through the clever use of satire and humour, actors reveal the absurdities embedded within systems to which we often conform without question. Theatre becomes a lens, magnifying the truths that seem distant yet disturbingly close. At this tipping point, the spotlight exposes not just what we could become, but what we already are.`,
-
-                rules: [
-                    "1. Each school may send a team of two members.",
-                    "2. The event will consist of three rounds: a written round, a puzzle-solving round, and a final on-stage round.",
-                    "3. The written round will test general knowledge and lateral thinking skills.",
-                    "4. The puzzle-solving round will involve solving a series of puzzles within a time limit.",
-                    "5. The final on-stage round will involve a live puzzle-solving challenge in front of an audience.",
-                    "6. The team with the highest score at the end of all rounds will be declared the winner.",
-                    "7. The judges' decision will be final and binding."
-                ],
-            },
-
-            // ...Array(images.length - 2).fill({
-            //   title: "COMING SOON",
-            //   desc: "Details will be revealed soon...",
-            //   rules: ["More info coming soon"],
-            // }),
-        ];
-
-        // open modal
-        images.forEach((img, index) => {
-            img.addEventListener("click", () => {
-                currentIndex = index;
-                showContent();
-                modal.style.display = "flex";
-                setTimeout(() => modal.classList.add("show"), 10);
-            });
+    // open modal
+    items.forEach((item, index) => {
+        item.addEventListener("click", () => {
+            if (window.isDraggingSlider) return;
+            currentIndex = index;
+            showContent();
+            modal.style.display = "flex";
+            setTimeout(() => {
+                modal.classList.add("show");
+            }, 10);
         });
+    });
 
-        function showContent() {
-            modalBody.classList.remove("show-rules");
-            modalImg.src = images[currentIndex].src;
-            modalTitle.textContent = eventData[currentIndex].title;
-            modalDesc.textContent = eventData[currentIndex].desc;
+    function showContent() {
+        modalBody.classList.remove("show-rules");
+        modalImg.src = items[currentIndex].querySelector("img").src;
+        modalTitle.textContent = eventData[currentIndex].title;
+        modalDesc.textContent = eventData[currentIndex].desc;
 
-            // rules list
-            modalRules.innerHTML = "";
-            eventData[currentIndex].rules.forEach((rule) => {
-                const li = document.createElement("li");
-                li.textContent = rule;
-                modalRules.appendChild(li);
-            });
-        }
+        modalRules.innerHTML = "";
+        
+        const currentTitle = eventData[currentIndex].title;
+        const applyBlueStyle = ["HARMONY", "LA PERSONA", "DANCE O' MANIA"].includes(currentTitle);
 
-        function animateChange(direction) {
-            const body = document.querySelector(".modal-body");
+        eventData[currentIndex].rules.forEach((rule, index) => {
+            const li = document.createElement("li");
+            li.style.fontFamily = "'Panchang', sans-serif";
+            li.style.display = "flex";
+            li.style.alignItems = "flex-start";
+            li.style.gap = "10px";
 
-            body.classList.remove("slide-in");
-            body.classList.add(
-                direction === "next" ? "slide-out-left" : "slide-out-right",
-            );
+            const indentCount = rule.match(/^\s*/)[0].length;
+            const trimmedRule = rule.trim();
+            const startsWithNumber = /^\d+\./.test(trimmedRule);
 
-            setTimeout(() => {
-                showContent();
-
-                body.classList.remove("slide-out-left", "slide-out-right");
-                body.classList.add("slide-in");
-            }, 200);
-        }
-
-        // next
-        nextBtn.onclick = () => {
-            currentIndex = (currentIndex + 1) % images.length;
-            animateChange("next");
-        };
-
-        // prev
-        prevBtn.onclick = () => {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            animateChange("prev");
-        };
-
-        // close
-        //   closeBtn.onclick = () => (modal.style.display = "none");
-        let isClosing = false;
-
-        function closeModal() {
-            if (isClosing) return;
-            isClosing = true;
-
-            modal.classList.remove("show");
-
-            setTimeout(() => {
-                modal.style.display = "none";
-                isClosing = false;
-            }, 400);
-        }
-        //   closeBtn.onclick = () => {
-        //     modal.classList.remove("show");
-        //     setTimeout(() => (modal.style.display = "none"), 400);
-        //   };
-
-        //   window.onclick = (e) => {
-        //     if (e.target === modal) {
-        //       modal.style.display = "none";
-        //     }
-        //   };
-        closeBtn.onclick = closeModal;
-
-        window.onclick = (e) => {
-            if (e.target === modal) {
-                closeModal();
+            // Determine if the whole line should be blue (Heading style)
+            let isBlueHeading = false;
+            if (applyBlueStyle) {
+                if (currentTitle === "HARMONY") {
+                    isBlueHeading = (indentCount === 0 && !trimmedRule.startsWith("6."));
+                } else if (currentTitle === "DANCE O' MANIA") {
+                    isBlueHeading = (indentCount === 0 && startsWithNumber && !trimmedRule.startsWith("17."));
+                } else {
+                    // LA PERSONA
+                    isBlueHeading = (indentCount === 0 && startsWithNumber);
+                }
             }
-        };
-    </script>
 
-    <!-- CUSTOM CURSOR -->
-    <script>
-        const dot = document.querySelector(".cursor-dot");
-        const ring = document.querySelector(".cursor-ring");
+            const processedText = trimmedRule.replace(/-/g, '\u2011');
+            
+            // Split into marker and text for hanging indent
+            const markerMatch = processedText.match(/^(\d+\.\s*|•\s*|-\s*)(.*)/);
+            let markerHtml = '';
+            let contentHtml = '';
 
-        let mouseX = 0;
-        let mouseY = 0;
+            if (markerMatch) {
+                const marker = markerMatch[1];
+                const content = markerMatch[2];
+                
+                if (isBlueHeading) {
+                    markerHtml = `<span style="color: #4da6ff; white-space: nowrap; flex-shrink: 0; font-family: 'Panchang', sans-serif;">${marker}</span>`;
+                    contentHtml = `<span style="color: #4da6ff; font-family: 'Panchang', sans-serif;">${content}</span>`;
+                } else if (indentCount === 0 && startsWithNumber) {
+                    // Just the number is blue
+                    markerHtml = `<span style="color: #4da6ff; white-space: nowrap; flex-shrink: 0; font-family: 'Panchang', sans-serif;">${marker}</span>`;
+                    contentHtml = `<span style="color: white; flex-grow: 1; font-family: 'Panchang', sans-serif;">${content}</span>`;
+                } else {
+                    // Regular point (white marker and text)
+                    markerHtml = `<span style="color: white; white-space: nowrap; flex-shrink: 0; font-family: 'Panchang', sans-serif;">${marker}</span>`;
+                    contentHtml = `<span style="color: white; flex-grow: 1; font-family: 'Panchang', sans-serif;">${content}</span>`;
+                }
+            } else {
+                // No marker found, just text
+                contentHtml = `<span style="color: ${isBlueHeading ? '#4da6ff' : 'white'}; flex-grow: 1; font-family: 'Panchang', sans-serif;">${processedText}</span>`;
+            }
 
-        let ringX = 0;
-        let ringY = 0;
-
-        // track mouse
-        document.addEventListener("mousemove", (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-
-            dot.style.left = mouseX + "px";
-            dot.style.top = mouseY + "px";
+            if (isBlueHeading) {
+                li.style.marginBottom = "6px"; 
+                if (startsWithNumber && index > 0) {
+                    li.style.marginTop = "25px";
+                }
+            } else {
+                if (indentCount > 0) {
+                    li.style.marginLeft = (indentCount * 12) + "px";
+                }
+                li.style.marginBottom = "15px";
+            }
+            
+            li.innerHTML = markerHtml + contentHtml;
+            modalRules.appendChild(li);
         });
+    }
 
-        // smooth follow (lag effect)
-        function animate() {
-            ringX += (mouseX - ringX) * 0.15;
-            ringY += (mouseY - ringY) * 0.15;
+    function animateChange(direction) {
+        const body = document.querySelector(".modal-body");
+        body.classList.remove("slide-in");
+        body.classList.add(direction === "next" ? "slide-out-left" : "slide-out-right");
 
-            ring.style.left = ringX + "px";
-            ring.style.top = ringY + "px";
+        setTimeout(() => {
+            showContent();
+            body.classList.remove("slide-out-left", "slide-out-right");
+            body.classList.add("slide-in");
+        }, 200);
+    }
 
-            requestAnimationFrame(animate);
+    nextBtn.onclick = () => {
+        currentIndex = (currentIndex + 1) % items.length;
+        animateChange("next");
+    };
+
+    prevBtn.onclick = () => {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        animateChange("prev");
+    };
+
+    let isClosing = false;
+    function closeModal() {
+        if (isClosing) return;
+        isClosing = true;
+        modal.classList.remove("show");
+        setTimeout(() => {
+            modal.style.display = "none";
+            isClosing = false;
+        }, 400);
+    }
+    
+    closeBtn.onclick = closeModal;
+    window.onclick = (e) => {
+        if (e.target === modal) {
+            closeModal();
         }
+    };
+</script>
 
-        animate();
-
-        // hover detection
-        const hoverElements = document.querySelectorAll("button, img, .item");
-
-        hoverElements.forEach((el) => {
-            el.addEventListener("mouseenter", () => {
-                document.body.classList.add("cursor-hover");
-            });
-
-            el.addEventListener("mouseleave", () => {
-                document.body.classList.remove("cursor-hover");
-            });
-        });
-
-        //OPTIONAL
-
-        document.addEventListener("click", () => {
-            ring.style.transform = "translate(-50%, -50%) scale(0.7)";
-            setTimeout(() => {
-                ring.style.transform = "translate(-50%, -50%) scale(1)";
-            }, 100);
-        });
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const toggle = document.querySelector('.menu-toggle');
-        const navbar = document.querySelector('.navbar');
 
-        toggle.addEventListener('click', () => {
-            navbar.classList.toggle('active');
-        });
+
+    <script>
+        const nav = document.getElementById("navContainer");
+    const toggle = document.getElementById("navToggle");
+
+// Toggle on click (good for mobile)
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+
+// Optional: hover support for desktop
+nav.addEventListener("mouseenter", () => {
+  nav.classList.add("active");
+});
+
+nav.addEventListener("mouseleave", () => {
+  nav.classList.remove("active");
+});
     </script>
+    <script src="app.js"></script>
 </body>
 
 </html>
